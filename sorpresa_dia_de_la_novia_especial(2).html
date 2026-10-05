@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Para ti, mi niña ❤️</title>
+<style>
+*{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Georgia,serif;color:#5a2435;
+background:linear-gradient(135deg,#fff0f5,#ffdce7,#fff8fb);display:flex;justify-content:center;align-items:center;overflow:hidden}
+.bg{position:fixed;inset:0;pointer-events:none}.h{position:absolute;bottom:-40px;animation:up linear infinite;opacity:0}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.75}100%{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+.card{width:min(92%,450px);max-height:90vh;overflow:auto;background:#fffffff0;border:1px solid #ffd0dc;border-radius:30px;
+padding:32px 25px;text-align:center;box-shadow:0 20px 60px #8b3d5525;position:relative;z-index:2}
+.top{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#b55b75}
+h1{font-size:34px;margin:12px 0} .intro{font-size:18px;line-height:1.65}
+button{border:0;border-radius:30px;padding:14px 23px;background:#c94d70;color:white;font-weight:bold;font-size:16px;margin:9px;
+box-shadow:0 8px 20px #c94d7040;cursor:pointer}.section{display:none;animation:show .7s ease}.section.active{display:block}
+@keyframes show{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.line{height:1px;background:#f2c5d1;margin:20px 0}.text{font-size:17px;line-height:1.75}
+.quote{font-style:italic;font-size:20px;line-height:1.6}.end{font-size:19px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="bg" id="bg"></div>
+<div class="card">
+  <div class="top">Una sorpresa para ti 💗</div>
+  <div id="s0" class="section active">
+    <h1>Para mi niña ❤️</h1>
+    <p class="intro">Hoy no quería mandarte solamente un “Feliz Día de la Novia”.<br>
+    Quería hacer algo diferente, algo pequeño pero hecho especialmente para ti.</p>
+    <button onclick="go(1)">Abrir mi carta 💌</button>
+  </div>
+
+  <div id="s1" class="section">
+    <h1>Primero... ✨</h1>
+    <p class="text">Quiero que sepas que eres una persona muy especial para mí.
+    Desde que llegaste a mi vida, has ocupado un lugar que nadie más podría ocupar.
+    Hay momentos que quizá parecen pequeños, pero para mí significan muchísimo simplemente porque los compartí contigo.</p>
+    <button onclick="go(2)">Hay algo más... 💕</button>
+  </div>
+
+  <div id="s2" class="section">
+    <h1>Gracias, mi amor 🌷</h1>
+    <p class="text">Gracias por cada conversación, por cada sonrisa, por los momentos bonitos
+    y también por enseñarme que una relación se construye con paciencia, sinceridad y cariño.
+    Puede que no siempre encuentre las palabras perfectas, pero mis sentimientos por ti son sinceros.</p>
+    <button onclick="go(3)">Lee esto ❤️</button>
+  </div>
+
+  <div id="s3" class="section">
+    <h1>Lo que quiero decirte... 🥺</h1>
+    <p class="quote">“No quiero que este día sea solamente una fecha.
+    Quiero que sea un pequeño recordatorio de lo importante que eres para mí.”</p>
+    <p class="text">Quiero seguir creando recuerdos contigo, seguir conociéndote,
+    reírnos de nuestras tonterías y disfrutar esos momentos que solo nosotros entendemos.</p>
+    <button onclick="go(4)">Una última cosa... 💗</button>
+  </div>
+
+  <div id="s4" class="section">
+    <h1>Para ti, siempre 🌙</h1>
+    <p class="text">No sé qué nos traerá el futuro, pero sí sé que hoy estoy feliz de tenerte
+    en mi vida. Y si alguna vez dudas de lo que siento, recuerda que detrás de estas palabras
+    hay alguien que realmente te quiere y que desea verte feliz.</p>
+    <div class="line"></div>
+    <p class="end">Feliz Día de la Novia, mi niña. ❤️</p>
+    <p class="text">Gracias por ser tú.<br>Te quiero muchísimo. 💕</p>
+    <button onclick="go(5)">💖 Una pequeña sorpresa</button>
+  </div>
+
+  <div id="s5" class="section">
+    <h1>Y recuerda... 💞</h1>
+    <p class="quote">“Entre tantas personas, qué bonito fue encontrarte a ti.”</p>
+    <p class="end">Con mucho cariño,<br>tu amor ❤️</p>
+    <button onclick="go(0)">Volver a leer 💌</button>
+  </div>
+</div>
+<script>
+function go(n){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));document.getElementById('s'+n).classList.add('active')}
+for(let i=0;i<28;i++){let x=document.createElement('div');x.className='h';x.textContent=['❤️','💕','💗','💖','🌸'][Math.floor(Math.random()*5)];
+x.style.left=Math.random()*100+'%';x.style.fontSize=(14+Math.random()*18)+'px';x.style.animationDuration=(5+Math.random()*6)+'s';x.style.animationDelay=Math.random()*8+'s';document.getElementById('bg').appendChild(x)}
+</script>
+</body>
+</html>
